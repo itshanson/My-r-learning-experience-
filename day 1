@@ -1,0 +1,37 @@
+Day 1
+Just starting r learning, here are the codes I just leanrt 
+1. Remeber to impor the library before importing the data 
+
+ggplot(data = <DATA>) + 
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+  
+  Here are some ways to distiguish the shapes in the plots
+ This is formula for facet wrap
+ 
+ ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 2)
+  A continuous variable can not be mapped to linetype
+  
+  I don't quite understand this part:
+  ggplot(data = mpg) +
+  geom_smooth(mapping = aes(x = displ, y = hwy))
+              
+ggplot(data = mpg) +
+  geom_smooth(mapping = aes(x = displ, y = hwy, group = drv))
+    
+ggplot(data = mpg) +
+  geom_smooth(
+    mapping = aes(x = displ, y = hwy, color = drv),
+    show.legend = FALSE
+  )
+  
+  I just found something on Stackoverflow:
+  "se = False" stands for std error of the estimate
+  
+  This will produce a smooth line that assemble all of the points that is being displayed in the chart 
+  ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  geom_smooth()
+
+  
